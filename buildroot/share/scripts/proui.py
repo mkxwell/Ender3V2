@@ -23,8 +23,8 @@ MarlinEnv = env['MARLIN_FEATURES']
 marlin_manualmesh = _GetMarlinEnv(MarlinEnv, 'MESH_BED_LEVELING')
 marlin_abl = _GetMarlinEnv(MarlinEnv, 'AUTO_BED_LEVELING_BILINEAR')
 marlin_ubl = _GetMarlinEnv(MarlinEnv, 'AUTO_BED_LEVELING_UBL')
-stm32f1 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F103RC')
-stm32f4 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F401RC')
+stm32f1 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F103RC') or _GetMarlinEnv(MarlinEnv, 'MCU_STM32F103RE')
+stm32f4 = _GetMarlinEnv(MarlinEnv, 'MCU_STM32F401RC') or _GetMarlinEnv(MarlinEnv, 'MCU_STM32F401RE')
 
 if (stm32f1):
    arch = 'stm32f1/'
